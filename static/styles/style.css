@@ -3,7 +3,7 @@ body {
 }
 
 .content {
-    padding: 20px;
+    max-width: 1080px;
     margin: 0 auto;
 }
 
@@ -36,12 +36,6 @@ body {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    /*padding-inline-start: 5px;*/
-}
-
-.catalog_menu {
-    list-style-type: none;
-    display: flex;
 }
 
 .header_menu_item {
@@ -196,4 +190,11 @@ input[type="email"]:focus {
 .map {
     width: 100%;
     height: 374px;
+}
+
+.catalog_items_list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    background: #eaeaea;
 }

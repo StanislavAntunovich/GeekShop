@@ -5,40 +5,56 @@
     <meta charset="UTF-8">
     <title>Шпунтик и&nbsp;Транзистор</title>
     <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="content">
-        <header class="header">
-            <div class="header_label">
-                <a href="index.html">
-                    <img class="img_150" src="/static/img/label.jpeg" alt="vintik and shpuntik label">
-                </a>
-            </div>
-            <div class="header_menu">
-                <ul class="header_menu_list">
-                    <li class="header_menu_item"><a href="/" class="header_menu_link">Главная</a></li>
-                    <li class="header_menu_item"><a href="/catalog" class="header_menu_link">Каталог</a></li>
-                    <li class="header_menu_item"><a href="/contacts" class="header_menu_link">Контакты</a></li>
-                </ul>
-            </div>
-        </header>
+<div class="content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/"><img src="/static/img/label.jpeg" width="90"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-
-        <div class="content_info">
-            <h1>Шпунтик и&nbsp;Транзистор</h1>
-
-            <p>
-                Добро пожаловать в&nbsp;наш магазин электоники и&nbsp;техники.<br>
-                Мы&nbsp;в&nbsp;работе с&nbsp;1914&nbsp;года. Да. Никто еще не&nbsp;знал что такое Интернет, а&nbsp;мы&nbsp;уже работали.<br>
-                Проходите, чувствуйте себя как дома, заказывайте.
-            </p>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/catalog">Каталог </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contacts">Контакты <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+            </form>
         </div>
+    </nav>
 
-        <footer class="footer">
-            <p class="footer_content"><small>все права защищены&copy;</small></p>
-        </footer>
+
+    <div class="content_info">
+        <h1>Шпунтик и&nbsp;Транзистор</h1>
+
+        <p>
+            Добро пожаловать в&nbsp;наш магазин электоники и&nbsp;техники.<br>
+            Мы&nbsp;в&nbsp;работе с&nbsp;1914&nbsp;года. Да. Никто еще не&nbsp;знал что такое Интернет, а&nbsp;мы&nbsp;уже
+            работали.<br>
+            Проходите, чувствуйте себя как дома, заказывайте.
+        </p>
     </div>
+
+    <footer class="footer">
+        <p class="footer_content">
+            <small>все права защищены&copy;</small>
+        </p>
+    </footer>
+</div>
 </body>
 
 
