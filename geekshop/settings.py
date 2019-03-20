@@ -24,7 +24,7 @@ SECRET_KEY = 'pnzk-vb#i+7y+*#rg!asmbmsltkc&4v%p8&p8^mq5&3du8fty@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 

@@ -3,7 +3,7 @@ body {
 }
 
 .content {
-    max-width: 720px;
+    padding: 20px;
     margin: 0 auto;
 }
 
@@ -36,7 +36,12 @@ body {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    padding-inline-start: 5px;
+    /*padding-inline-start: 5px;*/
+}
+
+.catalog_menu {
+    list-style-type: none;
+    display: flex;
 }
 
 .header_menu_item {
