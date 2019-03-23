@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page_title|title }}</title>
+
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
+</head>
+
+<body>
+<div class="content">
+
+
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="footer">
+        <p class="footer_content">
+            <small>все права защищены&copy; {% now "Y" %}</small>
+        </p>
+    </footer>
+</div>
+</body>
+
+
+</html>
