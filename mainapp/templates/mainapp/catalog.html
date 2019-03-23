@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %}
-    {% include 'mainapp/includes/inc__nav_menu.html' %}
 
     <h1>Каталог</h1>
 
@@ -21,20 +20,9 @@
     </div>
 
     <div class="card-group">
-        <div class="goods">
-            <div class="goods_card">
-                <a href="/item">
-                    <img class="img_150" src="/static/img/small/intel_i9_7960_300X300.jpg" alt="intel core i9 7960x">
-                    <p>INTEL core i9 7960X</p>
-                </a>
-            </div>
-            <div class="goods_card">
-                <a href="/item">
-                    <img class="img_150" src="/static/img/small/intel_i9_7960_300X300.jpg" alt="intel core i9 7960x">
-                    <p>INTEL core i9 7960X</p>
-                </a>
-            </div>
-        </div>
+        {% for card in items %}
+            {% include 'mainapp/goods_card.html' %}
+        {% endfor %}
     </div>
 
 {% endblock %}

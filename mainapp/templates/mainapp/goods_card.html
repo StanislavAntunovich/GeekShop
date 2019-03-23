@@ -1,7 +1,7 @@
 {% load static %}
 <div class="goods_card">
-    <a href="/item">
-        <img class="img_150" src="{% static 'img/small/intel_i9_7960_300X300.jpg' %}" alt="intel core i9 7960x">
-        <p>{{ item_name }}</p>
+    <a href="/item/{{ card.item_link }}">
+        <img class="img_150" src="{% static card.item_pic %}" alt="{{ card.item_name }}">
+        <p>{{ card.item_name }}</p>
     </a>
 </div>

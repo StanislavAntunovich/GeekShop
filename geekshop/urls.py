@@ -22,7 +22,7 @@ urlpatterns = [
     re_path(r'^$', mainapp.index, name='index'),
     re_path(r'^catalog/$', mainapp.catalog, name='catalog'),
     re_path(r'^contacts/$', mainapp.contacts, name='contacts'),
-    path('item/', mainapp.item),
+    re_path('^item/.*', mainapp.item),
 
     path('admin/', admin.site.urls),
 

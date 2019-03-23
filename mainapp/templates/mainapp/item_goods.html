@@ -1,54 +1,18 @@
-<!DOCTYPE html>
-<html lang="ru">
+{% extends 'mainapp/base_template.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Процессор INTEL Core i9</title>
-    <link rel="stylesheet" href="/static/styles/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+{% block content %}
 
-<body>
-    <div class="content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/"><img src="/static/img/label.jpeg" width="90"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <h1>{{ full_name }}</h1>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/catalog">Каталог </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contacts">Контакты <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
-            </form>
-        </div>
-    </nav>
-
-        <h1>Процессор INTEL Core i9 7960X, LGA 2066&nbsp;BOX</h1>
-
-        <a href="/static/img/intel_i9_7960.jpg" target="_blanck">
-            <img class="desc_img" src="/static/img/intel_i9_7960.jpg" alt="intel core i9 7960x" title="INTEL Core i9 7960X">
+        <a href="{% static item_img %}" target="_blanck">
+            <img class="desc_img" src="{% static item_img %}" alt="{{ page_title }}" title="{{ page_title }}">
         </a>
 
         <div class="short_desc">
             <h2 class="desc_header">Описание:</h2>
             <p class="short_desc_text">
-                Сокет LGA 2066, ядро Skylake-X, ядер&nbsp;&mdash; 16, потоков&nbsp;&mdash; 32, L3&nbsp;кэш 22Мб, Turbo&nbsp;3.0&nbsp;&mdash; 4.4ГГц,
-                частота 2.8&nbsp;ГГц и&nbsp;4.2&nbsp;ГГц в&nbsp;режиме Turbo, техпроцесс 14нм, поддержка памяти DDR4 до&nbsp;128&nbsp;ГБ,
-                каналов памяти&nbsp;&mdash; 4, множитель не&nbsp;заблокирован, контроллер PCI Express&nbsp;3.0, поставка BOX без кулера.
+                {{ description }}
             </p>
             <button class="buy_button" type="button">Купить</button>
         </div>
@@ -76,64 +40,64 @@
             <table class="chrachteristics_table">
                 <tr>
                     <td class="chrachteristics_name">Ядро:</td>
-                    <td class="chrachteristics_value">Skylake-X</td>
+                    <td class="chrachteristics_value">{{ characteristics.core }}</td>
                 </tr>
                 <tr>
                     <td class="chrachteristics_name">Socket:</td>
-                    <td class="chrachteristics_value">LGA 2066</td>
+                    <td class="chrachteristics_value">{{ characteristics.socket }}</td>
                 </tr>
                 <tr>
                     <td class="chrachteristics_name">Количество ядер:</td>
-                    <td class="chrachteristics_value">16</td>
+                    <td class="chrachteristics_value">{{ characteristics.cores_count }}</td>
                 </tr>
                 <tr>
                     <td class="chrachteristics_name">Количество потоков:</td>
-                    <td class="chrachteristics_value">32</td>
+                    <td class="chrachteristics_value">{{ characteristics.threads_count }}</td>
                 </tr>
                 <tr>
                     <td class="chrachteristics_name">Частота:</td>
-                    <td class="chrachteristics_value">2.8&nbsp;ГГц и&nbsp;4.2&nbsp;ГГц в&nbsp;режиме Turbo</td>
+                    <td class="chrachteristics_value">{{ characteristics.frequency }}</td>
                 </tr>
                 <tr>
                     <td class="chrachteristics_name">L1&nbsp;кэш:</td>
-                    <td class="chrachteristics_value">32&times;64&nbsp;КБ</td>
+                    <td class="chrachteristics_value">{{ characteristics.l1_cache }}</td>
                 </tr>
                 <tr>
                     <td class="chrachteristics_name">L2&nbsp;кэш:</td>
-                    <td class="chrachteristics_value">32&times;1024&nbsp;КБ</td>
+                    <td class="chrachteristics_value">{{ characteristics.l2_cache }}</td>
                 </tr>
                 <tr>
                     <td class="chrachteristics_name">L3&nbsp;кэш:</td>
-                    <td class="chrachteristics_value">22&nbsp;Мб</td>
+                    <td class="chrachteristics_value">{{ characteristics.l3_cache }}</td>
                 </tr>
                 <tr>
                     <td class="chrachteristics_name">Разрядность вычислений:</td>
-                    <td class="chrachteristics_value">64&nbsp;bit</td>
+                    <td class="chrachteristics_value">{{ characteristics.discharge }}</td>
                 </tr>
                 <tr>
                     <td class="chrachteristics_name">Тепловыделение:</td>
-                    <td class="chrachteristics_value">165&nbsp;Вт</td>
+                    <td class="chrachteristics_value">{{ characteristics.heat }}</td>
                 </tr>
                 <tr>
                     <td class="chrachteristics_name">Максимальная температура:</td>
-                    <td class="chrachteristics_value">98&deg;С</td>
+                    <td class="chrachteristics_value">{{ characteristics.max_temp }}</td>
                 </tr>
                 <tr>
                     <td class="chrachteristics_name">Версия PCI&nbsp;Express:</td>
-                    <td class="chrachteristics_value">PCI Express&nbsp;3.0</td>
+                    <td class="chrachteristics_value">{{ characteristics.pci_version }}</td>
                 </tr>
                 <tr>
                     <td class="chrachteristics_name">Количество каналов PCI&nbsp;Express:</td>
-                    <td class="chrachteristics_value">44</td>
+                    <td class="chrachteristics_value">{{ characteristics.pci_channels_count }}</td>
                 </tr>
                 <tr>
                     <td class="chrachteristics_name">Гарантия:</td>
-                    <td class="chrachteristics_value">36&nbsp;мес.</td>
+                    <td class="chrachteristics_value">{{ characteristics.guaranty }}</td>
                 </tr>
                 <tr>
                     <td class="chrachteristics_name">Сайт производителя:</td>
                     <td class="chrachteristics_value">
-                        <a href="http://www.intel.ru" target="_blanck">www.intel.ru</a>
+                        <a href="http://{{ characteristics.manufacture_link }}" target="_blanck">{{ characteristics.manufacture_link }}</a>
                     </td>
                 </tr>
             </table>
@@ -142,17 +106,8 @@
         <div class="description">
             <h2 class="desc_header">Подробное описание:</h2>
             <p class="detailed_desc">
-                Intel Core i9 7960x удивляют своими способностями. Они более чем в&nbsp;2&nbsp;раза быстрее &laquo;отрисовывают&raquo; изображения в&nbsp;Corona&nbsp;1.3 Benchmark по&nbsp;сравнению с&nbsp;моделями Core i7-8700K,
-                которые обладают 6&nbsp;ядрами. Сотрудники компании Интел, выяснили, что не&nbsp;основная масса покупателей&nbsp;&mdash; энтузиасты, которые используют мощности процессоров Core X&nbsp;в индивидуальных целях.
-                Большая часть покупателей&nbsp;&mdash; разработчики контента.
+                {{ full_description }}
             </p>
         </div>
 
-        <footer class="footer">
-            <p><small>все права защищены&copy;</small></p>
-        </footer>
-    </div>
-
-</body>
-
-</html>
+{% endblock %}
