@@ -25,5 +25,4 @@ urlpatterns = [
     re_path('^item/.*', mainapp.item),
 
     path('admin/', admin.site.urls),
-
 ]
