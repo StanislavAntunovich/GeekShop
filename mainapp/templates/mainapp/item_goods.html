@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+    {% if full_name %}
 
         <h1>{{ full_name }}</h1>
 
@@ -109,5 +110,9 @@
                 {{ full_description }}
             </p>
         </div>
+    {% else %}
+
+    <p class="not_found">Page not found</p>
+    {% endif %}
 
 {% endblock %}

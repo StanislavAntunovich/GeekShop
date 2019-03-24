@@ -43,7 +43,7 @@ def contacts(request):
 def item(request):
     item = re.search(ITEM_PATTERN, request.path)
 
-    context = {
+    _context = {
         'i9_7960x': {
             PAGE_TITLE: 'Intel i9 7960',
             'item_img': IMG_PATH + 'intel_i9_7960.jpg',
@@ -106,5 +106,9 @@ def item(request):
             }
         }
     }
+    if _context.get(item.group(1)):
+        context = _context[item.group(1)]
+    else:
+        context = {PAGE_TITLE: "404 Page not found"}
 
-    return render(request, 'mainapp/item_goods.html', context[item.group(1)])
+    return render(request, 'mainapp/item_goods.html', context)

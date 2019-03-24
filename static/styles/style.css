@@ -198,3 +198,9 @@ input[type="email"]:focus {
     flex-wrap: wrap;
     background: #eaeaea;
 }
+
+.not_found {
+    color: #707070;
+    font-size: 80px;
+    text-align: center;
+}
